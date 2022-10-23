@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const [isLinkProcessing, setLinkProcessingStatus] = useState(false)
   const [isCopied, setIsCopied] = useState(false)
 
-  const inputRef = useRef(null)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const getShortLink = async (link: string) => {
     setLinkProcessingStatus(true)

@@ -8,6 +8,7 @@ Built with Next.js and React
 
 ## Screenshots and demo
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/859a63b8-394a-457b-99d3-598f5589ce9f/deploy-status)](https://app.netlify.com/sites/gilded-cuchufli-52e5ab/deploys)
 [![Product Name Screen Shot][product-screenshot]](https://github.com/gitmohamed/link-shorty)
 
 <!-- GETTING STARTED -->
