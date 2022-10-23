@@ -8,7 +8,7 @@ Built with Next.js and React
 
 ## Screenshots and demo
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/gitmohamed/NFTSniper)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/gitmohamed/link-shorty)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -35,7 +35,7 @@ _To use this app follow the steps below._
    yarn
 
    OR
-   
+
    npm install
    ```
 3. Create `.env.local`, copy this code and enter your discord channel's Webhook URL
