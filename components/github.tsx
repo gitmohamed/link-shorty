@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
 
-
 const GithubIcon = () => {
     return (
         <a target='_blank' rel="noreferrer" href="https://github.com/gitmohamed/link-shorty" className={styles.githubCorner} aria-label="View source on GitHub">

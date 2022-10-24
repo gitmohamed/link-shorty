@@ -1,60 +1,12 @@
 import type { NextPage } from 'next'
-import { useState, useRef } from 'react';
 import Head from 'next/head'
-import Image from 'next/image'
+
+import BitlyForm from '../components/bitlyForm'
+import Footer from '../components/footer'
 import GithubIcon from '../components/github'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-  const [link, setLink] = useState<string>('')
-  const [shortened, setShortened] = useState<string>('')
-  const [isLinkProcessing, setLinkProcessingStatus] = useState<boolean>(false)
-  const [isCopied, setIsCopied] = useState<boolean>(false)
-
-  const inputRef = useRef<HTMLInputElement>(null)
-
-  const getShortLink = async (link: string) => {
-    setLinkProcessingStatus(true)
-    setIsCopied(false)
-    await fetch(`api/shorten?URL=${link}`).then((data) => {
-      return data.json();
-    }).then((data) => {
-      setLink('')
-      setLinkProcessingStatus(false)
-      setShortened(data.response.link)
-      console.log(data.response)
-    }).catch(err => {
-      console.log("Error: ", err)
-    })
-  }
-
-  const handleChange = (e: any) => setLink(e.target.value); // form input assignment in react looks like this
-  const handleSubmit = (e: any) => {
-    // Send API request to local server to send request to bit.ly for generating short link 
-    // * Sent to server intermediary for API token security
-    // * We need not expose sensitive tokens to the public! 
-    // validate link using regex before sending initial request . * confirm that user url is a valid URL
-    if (/^(http|https):\/\/[^ "]+$/.test(link)) {
-      getShortLink(link);
-    } else {
-      alert("Please enter a valid URL")
-      if (inputRef.current) {
-        inputRef.current.select();
-        inputRef.current.focus();
-      }
-    }
-    setIsCopied(false)
-    e.preventDefault();
-  }
-
-  const handleCopy = (e: any) => {
-    if (shortened !== '') {
-      // Copy the text inside the text field
-      navigator.clipboard.writeText(shortened);
-      setIsCopied(true)
-    }
-  }
-
   return (
     <div className={styles.container}>
       <Head>
@@ -68,46 +20,10 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Link Shorty <a target="_blank" rel="noopener noreferrer" href="https://github.com/gitmohamed/link-shorty">By gitMohamed</a>
         </h1>
-
-        <div className={styles.grid}>
-          <span className={styles.inputSpan}>Shorten a link:{' '}</span>
-          <form className={styles.shorteningForm} action="#" onSubmit={handleSubmit}>
-            <input 
-              id='linkInput' 
-              ref={inputRef} 
-              onChange={handleChange} 
-              type="text" 
-              autoComplete="off"
-              required
-              value={link} 
-              className={styles.longLink}
-              placeholder='https://mobile.facelook.com/superduperfacelookpage...' /><br />
-            <input className={styles.submitBtn} type="submit" disabled={isLinkProcessing} value={isLinkProcessing ? 'Processing...' : 'Shorten'} />
-          </form>
-          <div onClick={handleCopy} className={styles.description}>
-            <p>{shortened || 'bit.ly/..'}</p>
-            <small className={styles.decriptionInfo}><em>{isCopied ? 'Copied ✔️' : 'Click to copy 📋'}</em></small>
-          </div>
-        </div>
-
+        <BitlyForm />
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/Nextjs-logo.svg" alt="NextJS Logo" width={193} height={110} />
-          </span> & bit.ly
-        </a>
-        <small>
-          By clicking SHORTEN, you are agreeing to Bitly’s Terms of Service
-          and Privacy Policy
-        </small>
-      </footer>
+      <Footer />
     </div>
   )
 }
