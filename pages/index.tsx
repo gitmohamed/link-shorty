@@ -5,10 +5,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-  const [link, setLink] = useState('')
-  const [shortened, setShortened] = useState('')
-  const [isLinkProcessing, setLinkProcessingStatus] = useState(false)
-  const [isCopied, setIsCopied] = useState(false)
+  const [link, setLink] = useState<string>('')
+  const [shortened, setShortened] = useState<string>('')
+  const [isLinkProcessing, setLinkProcessingStatus] = useState<boolean>(false)
+  const [isCopied, setIsCopied] = useState<boolean>(false)
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       setLink('')
       setLinkProcessingStatus(false)
       setShortened(data.response.link)
-      console.log(data.response.link)
+      console.log(data.response)
     }).catch(err => {
       console.log("Error: ", err)
     })
@@ -31,13 +31,14 @@ const Home: NextPage = () => {
   const handleSubmit = (e: any) => {
     // Send API request to local server to send request to bit.ly for generating short link 
     // * Sent to server intermediary for API token security
-    // * We need not expose sensetive tokens to the public! 
-    // validate link using regex before sending initial request . *confirm url is a valid URL
+    // * We need not expose sensitive tokens to the public! 
+    // validate link using regex before sending initial request . * confirm that user url is a valid URL
     if (/^(http|https):\/\/[^ "]+$/.test(link)) {
       getShortLink(link);
     } else {
       alert("Please enter a valid URL")
       if (inputRef.current) {
+        inputRef.current.select();
         inputRef.current.focus();
       }
     }
@@ -74,9 +75,11 @@ const Home: NextPage = () => {
               ref={inputRef} 
               onChange={handleChange} 
               type="text" 
+              autoComplete="off"
+              required
               value={link} 
               className={styles.longLink}
-              placeholder='https://mobile.facelook.com/superduperfacelookpagelink...' /><br />
+              placeholder='https://mobile.facelook.com/superduperfacelookpage...' /><br />
             <input className={styles.submitBtn} type="submit" disabled={isLinkProcessing} value={isLinkProcessing ? 'Processing...' : 'Shorten'} />
           </form>
           <div onClick={handleCopy} className={styles.description}>
@@ -98,6 +101,10 @@ const Home: NextPage = () => {
             <Image src="/Nextjs-logo.svg" alt="NextJS Logo" width={193} height={110} />
           </span> & bit.ly
         </a>
+        <small>
+          By clicking SHORTEN, you are agreeing to Bitly’s Terms of Service
+          and Privacy Policy
+        </small>
       </footer>
     </div>
   )

@@ -8,8 +8,8 @@ Built with Next.js and React
 
 ## Screenshots and demo
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/859a63b8-394a-457b-99d3-598f5589ce9f/deploy-status)](https://app.netlify.com/sites/gilded-cuchufli-52e5ab/deploys)
-[![Product Name Screen Shot][product-screenshot]](https://github.com/gitmohamed/link-shorty)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/859a63b8-394a-457b-99d3-598f5589ce9f/deploy-status)](https://main--gilded-cuchufli-52e5ab.netlify.app/)
+[![Product Name Screen Shot][product-screenshot]](https://main--gilded-cuchufli-52e5ab.netlify.app/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -39,7 +39,7 @@ _To use this app follow the steps below._
 
    npm install
    ```
-3. Create `.env.local`, copy this code and enter your discord channel's Webhook URL
+3. Create `.env.local` in the root directory, copy the code below and enter your bit.ly api key and group uid
 
    ```env
     NEXT_BITLY_API=BITLY_API_KEY_GOES_HERE
