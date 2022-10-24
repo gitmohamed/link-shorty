@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import { useState, useRef } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
+import GithubIcon from '../components/github'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -62,6 +63,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <GithubIcon />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Link Shorty <a target="_blank" rel="noopener noreferrer" href="https://github.com/gitmohamed/link-shorty">By gitMohamed</a>

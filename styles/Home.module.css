@@ -21,6 +21,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .footer a {
@@ -153,26 +154,76 @@
   padding: 0 4rem;
 }
 
+.githubCorner {
+  position: fixed;
+  right: 0;
+}
+
+.githubCorner:hover .octoArm {
+  animation: octocat-wave 560ms ease-in-out;
+  transform-origin: 130px 106px;
+}
+
+.svgStyle {
+  color:'#151513';
+  position: 'absolute'; 
+  top: 0; 
+  border: 0; 
+  right: 0;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+
+@media (max-width:500px) {
+  .githubCorner:hover .octoArm {
+    animation: none
+  }
+
+  .githubCorner .octoArm {
+    animation: octocat-wave 560ms ease-in-out
+  }
+}
+
 @media (max-width: 900px) {
   .title {
     font-size: 3.3rem;
   }
+
   .grid {
     width: 100%;
   }
+
   .description {
     font-size: 1.3rem;
   }
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
