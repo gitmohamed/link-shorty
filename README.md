@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/859a63b8-394a-457b-99d3-598f5589ce9f/deploy-status)](https://main--gilded-cuchufli-52e5ab.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/859a63b8-394a-457b-99d3-598f5589ce9f/deploy-status)](https://link-shorty42.netlify.app/)
 # DevProjects - Link shortener website
 
 This is an open source project from [DevProjects](http://www.codementor.io/projects). Feedback and questions are welcome!
@@ -9,12 +9,12 @@ Built with Next.js and React
 
 ## Screenshots and demo
 
-[![Product Name Screen Shot][product-screenshot]](https://main--gilded-cuchufli-52e5ab.netlify.app/)
+[![Product Name Screen Shot][product-screenshot]](https://link-shorty42.netlify.app/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is a nodejs program that can run on any Windows or Linux machine with NodeJS 16+ installed. Link Shorty is a serverless link shortening application made with React and the Next.js framework.
+Link Shorty is a serverless link shortening application made with React and the Next.js framework. Hosted to netlify with Next.js Runtime Version 4 (v4.27.3) installed.
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ This is a nodejs program that can run on any Windows or Linux machine with NodeJ
 
 ### Installation
 
-_To use this app follow the steps below._
+_To install/clone this app follow the steps below._
 
 1. Clone the repo
 
