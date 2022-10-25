@@ -18,11 +18,14 @@ const Home: NextPage = () => {
       <GithubIcon />
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Link Shorty <a target="_blank" rel="noopener noreferrer" href="https://github.com/gitmohamed/link-shorty">By gitMohamed</a>
+          Link Shorty
+          <a target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/gitmohamed/link-shorty">
+            By gitMohamed</a>
         </h1>
         <BitlyForm />
       </main>
-
       <Footer />
     </div>
   )
