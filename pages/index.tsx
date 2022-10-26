@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <GithubIcon />
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Link Shorty
+          Link Shorty{' '}
           <a target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/gitmohamed/link-shorty">
