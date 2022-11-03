@@ -63,6 +63,8 @@ _To install/clone this app follow the steps below._
 
 - [ ] Component testing
 - [ ] Show screenshot of the link for confirmation
+- [ ] Create typescript interface for the bit.ly return data
+
 
 See the [open issues](https://github.com/gitmohamed/link-shorty/issues) for a full list of proposed features (and known issues).
 
