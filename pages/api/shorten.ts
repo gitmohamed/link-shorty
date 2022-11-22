@@ -7,9 +7,9 @@ type Data = {
 }
 
 type bitlyData = {
-  long_url: string | any,
+  long_url: string | string[] | undefined,
   domain: "bit.ly",
-  group_guid: string | any
+  group_guid: string | undefined
 }
 
 export default async function handler(
