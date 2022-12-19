@@ -56,22 +56,22 @@ const BitlyForm = () => {
     return (
         <div className={styles.grid}>
             <span className={styles.inputSpan}>Shorten a link:{' '}</span>
-            <form className={styles.shorteningForm} action="#" onSubmit={handleSubmit}>
-            <input 
-                id='linkInput' 
-                ref={inputRef} 
-                onChange={handleChange} 
-                type="text" 
-                autoComplete="off"
-                required
-                value={link} 
-                className={styles.longLink}
-                placeholder='https://mobile.facelook.com/superduperfacelookpage...' /><br />
-            <input className={styles.submitBtn} type="submit" disabled={isLinkProcessing} value={isLinkProcessing ? 'Processing...' : 'Shorten'} />
+            <form className={styles.shorteningForm} action="#" onSubmit={handleSubmit} data-testid="shortening-form">
+              <input 
+                  id='linkInput' 
+                  ref={inputRef} 
+                  onChange={handleChange} 
+                  type="text" 
+                  autoComplete="off"
+                  required
+                  value={link} 
+                  className={styles.longLink}
+                  placeholder='https://mobile.facelook.com/superduperfacelookpage...' /><br />
+              <input className={styles.submitBtn} type="submit" disabled={isLinkProcessing} value={isLinkProcessing ? 'Processing...' : 'Shorten'} />
             </form>
             <div onClick={handleCopy} className={styles.description}>
-            <p>{shortened || 'bit.ly/..'}</p>
-            <small className={styles.decriptionInfo}><em>{isCopied ? 'Copied ✔️' : 'Click to copy 📋'}</em></small>
+              <p data-testid="new-link">{shortened || 'bit.ly/..'}</p>
+              <small className={styles.decriptionInfo}><em>{isCopied ? 'Copied ✔️' : 'Click to copy 📋'}</em></small>
             </div>
         </div>
     )

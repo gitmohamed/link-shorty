@@ -16,7 +16,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  // check that this request is exclusiviely a GET request
+  // check that this request is a GET request
   if(req.method === 'GET') {
     // build bitly specific API data requirements
     let bitData : bitlyData = {
